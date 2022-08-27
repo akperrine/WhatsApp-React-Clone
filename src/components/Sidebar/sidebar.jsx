@@ -3,6 +3,8 @@ import { Avatar, Grid, IconButton, Search } from "@mui/material";
 import { MdOutlineDonutLarge } from "react-icons/md";
 import { BsChatTextFill, BsThreeDotsVertical, BsSearch } from "react-icons/bs";
 
+import SidebarRow from "./Sidebar-Row/sidebar.row";
+
 const Sidebar = () => {
   return (
     <div className="sidebar-container">
@@ -34,6 +36,10 @@ const Sidebar = () => {
           <BsSearch className="sidebar-search-icon" />
           <input type="text" placeholder="search messages" />
         </div>
+      </div>
+      <div className="chatlist-container">
+        <SidebarRow />
+        <SidebarRow />
       </div>
     </div>
   );
