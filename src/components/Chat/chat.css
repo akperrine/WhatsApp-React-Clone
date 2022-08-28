@@ -1,0 +1,84 @@
+.chat-container {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+}
+
+.chat-header {
+  background-color: #ededed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 6rem;
+  z-index: 10;
+}
+
+.chat-header-avatar {
+  font-size: 1.5rem;
+  margin: 1rem;
+  height: 50px;
+  width: 50px;
+}
+
+.chat-header-info > h4 {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.chat-header-info > p {
+  color: gray;
+  /* margin-bottom: 50px; */
+}
+
+.chat-header-icon-container {
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.chat-body {
+  background-image: url(../../images/whatsapp__default.png);
+  background-repeat: repeat;
+  flex: 1;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.chat-footer {
+  background-color: #ededed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70px;
+}
+
+.chat-footer-icon-container {
+  margin: 10px;
+  /* width: 20%; */
+}
+
+.chat-footer-icon {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+}
+
+.chat-footer > form {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.chat-footer > form > textarea {
+  border-radius: 25px;
+  border: none;
+  width: 85%;
+  padding: 8px 12px;
+  font-size: 1.3rem;
+  height: 3rem;
+}

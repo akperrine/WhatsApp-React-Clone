@@ -4,14 +4,14 @@
 }
 
 .login-container {
-  height: 300px;
-  width: 300px;
+  height: 375px;
+  width: 375px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  padding: 2em 4em;
+  padding: 2em 2em;
 }
 
 @media screen and (min-width: 0px) and (max-width: 1100px) {
@@ -23,7 +23,7 @@
 
 .login-container > img {
   object-fit: contain;
-  height: 6rem;
+  height: 5.5rem;
 }
 
 @media screen and (max-width: 1100px) {
@@ -34,20 +34,20 @@
   }
 
   .signin-btn-content {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 }
 
 .signin-header {
   font-weight: 400;
-  font-size: 30px;
+  font-size: 28px;
   color: rgba(0, 0, 0, 0.87);
-  margin: 1rem 0 0.7em;
+  margin: 2rem 0 2em;
 }
 
 .signin-btn {
   width: 85%;
-  height: 38px;
+  height: 45px;
   background-color: #fff;
   border: 1px solid black;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
@@ -58,6 +58,7 @@
   align-items: center;
   cursor: pointer;
   margin-bottom: 25px;
+  padding: 20px;
 }
 
 @media screen and (min-width: 940px) and (max-width: 1100px) {
@@ -77,9 +78,8 @@
 }
 
 .phone {
-  height: 100%;
-  width: 27px;
-  padding: 0;
+  height: 2rem;
+  width: 1.8rem;
 }
 
 .signin-btn-content {

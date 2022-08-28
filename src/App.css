@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --white: #dde1c7;
   --green: #00b667;
@@ -37,6 +43,20 @@ a {
 }
 
 input:focus {
+  outline: none;
+}
+
+textarea {
+  font: inherit;
+  resize: none;
+  overflow-y: scroll;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+textarea:focus {
   outline: none;
 }
 

@@ -2,6 +2,7 @@ import "./App.css";
 
 // import Login from "./components/Login/login";
 import Sidebar from "./components/Sidebar/sidebar";
+import Chat from "./components/Chat/chat";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       {/* <Login /> */}
       <div className="app-container">
         <Sidebar />
+        <Chat />
       </div>
     </div>
   );
