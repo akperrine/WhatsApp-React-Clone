@@ -6,6 +6,11 @@
   margin: 10px 20px;
 }
 
+.message-reciever {
+  margin-left: auto;
+  background-color: aquamarine;
+}
+
 .message-container > h6 {
   font-size: 1.5rem;
   padding: 3px 0 3px;

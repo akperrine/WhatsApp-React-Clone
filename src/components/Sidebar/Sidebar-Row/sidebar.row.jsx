@@ -12,7 +12,7 @@ const SidebarRow = () => {
       <Grid className="sidebar-info" container item me={10} sm={10}>
         <Grid container item direction="column" md={8} sm={6}>
           <Grid className="sidebar-name-container" item>
-            <h3 className="sidebar-name">Alec</h3>
+            <h3 className="sidebar-name">The Great Debate</h3>
           </Grid>
           <Grid item>
             <p className="sidebar-message">Hey, what are you up to?</p>

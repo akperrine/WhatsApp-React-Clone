@@ -2,7 +2,13 @@ import { initializeApp } from "firebase/app";
 
 import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  RecaptchaVerifier,
+  signInWithPopup,
+  signInWithPhoneNumber,
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA_uUPClEfA96WGdbvKN9AeMikTZeGB1ww",
@@ -23,3 +29,12 @@ export const signInWithGooglePopup = () =>
   signInWithPopup(auth, provider)
     .then((result) => result)
     .catch((err) => console.log("error", err));
+
+// window.recaptchaVerifier = new RecaptchaVerifier(
+//   "sign-in-button",
+//   {
+//     size: "invisible",
+//     callback: (response) => {},
+//   },
+//   auth
+// );
