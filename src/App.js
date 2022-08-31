@@ -1,14 +1,14 @@
 import "./App.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import Login from "./components/Login/login";
 import Sidebar from "./components/Sidebar/sidebar";
 import Chat from "./components/Chat/chat";
 import { UserContext } from "./Contexts/user.context";
+import { auth } from "firebase/auth";
 
 const App = () => {
-  const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
 
   return (
     <div className="app">

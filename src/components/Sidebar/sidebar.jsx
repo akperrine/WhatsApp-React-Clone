@@ -2,6 +2,8 @@ import "./sidebar.css";
 import { Avatar, Grid, IconButton, Search } from "@mui/material";
 import { MdOutlineDonutLarge } from "react-icons/md";
 import { BsChatTextFill, BsThreeDotsVertical, BsSearch } from "react-icons/bs";
+import { FaSignOutAlt } from "react-icons/fa";
+import { signOutUser } from "../../utils/firebase.utils";
 
 import SidebarRow from "./Sidebar-Row/sidebar.row";
 
@@ -26,7 +28,7 @@ const Sidebar = () => {
           </Grid>
           <Grid item sm={3}>
             <IconButton>
-              <BsThreeDotsVertical className="sidebar-icon" />
+              <FaSignOutAlt className="sidebar-icon" onClick={signOutUser} />
             </IconButton>
           </Grid>
         </Grid>

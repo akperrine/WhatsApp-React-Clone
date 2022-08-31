@@ -1,14 +1,16 @@
 import { initializeApp } from "firebase/app";
 
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
-
 import {
   GoogleAuthProvider,
   getAuth,
   RecaptchaVerifier,
   signInWithPopup,
   signInWithPhoneNumber,
+  onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
+
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA_uUPClEfA96WGdbvKN9AeMikTZeGB1ww",
@@ -25,16 +27,41 @@ const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
 export const auth = getAuth();
+
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, provider)
     .then((result) => result)
     .catch((err) => console.log("error", err));
 
-// window.recaptchaVerifier = new RecaptchaVerifier(
-//   "sign-in-button",
-//   {
-//     size: "invisible",
-//     callback: (response) => {},
-//   },
-//   auth
-// );
+export const createRecaptchaVerifier = () => {
+  return new RecaptchaVerifier("recaptcha", {}, auth);
+};
+
+export const createUserDocumentFromGoogle = async (userAuth) => {
+  const userDocRef = doc(db, "users", userAuth.uid);
+  console.log(userDocRef);
+
+  const userSnapshot = await getDoc(userDocRef);
+  console.log(userSnapshot.exists());
+
+  if (!userSnapshot.exists()) {
+    const { displayName } = userAuth;
+    const createdAt = new Date();
+    console.log(displayName, createdAt);
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        createdAt,
+      });
+    } catch (error) {
+      console.log("error creating the user", error.message);
+    }
+  }
+
+  return userDocRef;
+};
+
+export const signOutUser = () => signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
